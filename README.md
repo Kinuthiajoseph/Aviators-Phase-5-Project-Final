@@ -4,12 +4,12 @@
 <img src="Images\1_UbeX1kOVLtCsJTpMUrWQuw.jpg"/>
 
 ## NAMES
-Joseph Kinuthia 
-Emily Owiti
-James Mungai
-Paul Muriithi
-Raphael Kariuki
-Sylvia Muchiri
+1. Joseph Kinuthia 
+2. Emily Owiti
+3. James Mungai
+4. Paul Muriithi
+5. Raphael Kariuki
+6. Sylvia Muchiri
 
 # TABLE OF CONTENTS
 1. [INTRODUCTION](#INTRODUCTION)
