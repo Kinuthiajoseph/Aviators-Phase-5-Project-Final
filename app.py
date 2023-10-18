@@ -179,7 +179,7 @@ def lemmatizer(text):
 
 
 # Loading the model 
-model = joblib.load("best_logistic_regression_model.pkl")
+model = joblib.load("tuned_logistic_regression.pkl")
 
 
 
