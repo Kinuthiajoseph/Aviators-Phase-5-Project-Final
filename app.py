@@ -116,6 +116,7 @@ def clean_tweet(tweet):
     return tweet
 
 
+
 def remove_emojis(text):
     # Define a regular expression pattern for emojis
     emoji_pattern = re.compile("["
@@ -156,6 +157,7 @@ def tokenize_with_regexp(text):
     return tokens
 
 
+
 stopwords = nltk.corpus.stopwords.words('english')
 
 #defining the function to remove stopwords from tokenized text
@@ -164,6 +166,7 @@ def remove_stopwords(text):
     output= [i for i in text if i not in stopwords]
     
     return output
+
 
 
 #defining the object for Lemmatization
@@ -176,6 +179,7 @@ def lemmatizer(text):
     
         
     return lemm_text
+
 
 
 # Loading the model 
@@ -204,14 +208,25 @@ def predict_sentiment(user_input):
     
     # Predict sentiment
     model_predict = model.predict([' '.join(user_input)])  # Join tokens into a sentence
-  # Emotional feedback
-    if model_predict == 0:
+    
+    # Define a sentiment mapping for numeric labels
+    sentiment_mapping = {
+        0: "negative",
+        1: "neutral",
+        2: "positive"
+    }
+    
+    # Map the numeric label to a sentiment category
+    predicted_sentiment = sentiment_mapping.get(model_predict[0], 'uncertain')
+    
+    # Emotional feedback
+    if predicted_sentiment == "negative":
         response = '😞 This text expresses negative sentiment. 😞\n'
         response += 'We understand it may not be a great day, but remember, you can always fly with us for a brighter experience! ✈️'
-    elif model_predict == 1:
+    elif predicted_sentiment == "neutral":
         response = '😐 This text shows a neutral emotion toward the brand or product. 😐\n'
         response += 'We appreciate your feedback and look forward to serving you better in the future. If you have any suggestions, feel free to share! 🤝'
-    elif model_predict == 2:
+    elif predicted_sentiment == "positive":
         response = '😃 Great news! This text is filled with positive sentiment. 😃\n'
         response += 'We are thrilled that you had a positive experience with us. Let us know if you would like to share your amazing story with others! 🌟'
     else:
@@ -220,14 +235,25 @@ def predict_sentiment(user_input):
 
     return response
 
+  
     
-    # Define a Streamlit app
+    # Defining a Streamlit app
 def main():
-# Set page title and background
-    st.set_page_config(page_title="Aviators X Sentiment Analysis Project", page_icon="✈️", layout="wide")
+# Setting page title and background
+    st.set_page_config(page_title="Aviators X Sentiment Analysis Project", 
+                       page_icon="✈️", 
+                       layout="wide")
 
-    # Header section
+    
+    
+    # Header section with airline image
     st.title("Sentiment Analysis with Aviators X")
+    airline_image = "airline image.jpeg"
+    st.image(airline_image, 
+             use_column_width=True, 
+             caption='Where Emotions Take Flight 🛫',
+             output_format="JPEG") # Displaying the image
+    
     st.markdown("🚀 **Welcome to the Aviators X Sentiment Analysis Project!** 🚀")
 
     # Objectives section
@@ -237,11 +263,13 @@ def main():
     st.markdown("2. Predicting whether text expresses negative, neutral, or positive sentiment.")
     st.markdown("3. Enhancing the user experience with a user-friendly interface.")
 
-    # User Input section
+
+    # User Input section centred
     st.sidebar.header("User Input")
     user_input = st.sidebar.text_area("Enter a tweet:")
 
-    if st.sidebar.button('Derive Output', key="predict_button"):
+
+    if st.button('Derive Output', key="predict_button"):
         test_result = predict_sentiment(user_input)
         st.success(f'✨ The model predicts: {test_result} ✨')
         
