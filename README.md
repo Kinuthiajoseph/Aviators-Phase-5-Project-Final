@@ -20,6 +20,8 @@
 6. [RESEARCH QUESTIONS](#RESEARCH-QUESTIONS)
 7. [EXPERIMENTAL DESIGN](#EXPERIMENTAL-DESIGN)
 8. [MODELLING, CHATBOT DEVELOPMENT AND DEPLOYMENT](#MODELLING,-CHATBOT-DEVELOPMENT-AND-DEPLOYMENT)
+9. [CONCLUSION](#CONCLUSION)
+10. [RECOMMENDATIONS](#RECOMMENDATIONS)
 
 # INTRODUCTION
 
@@ -63,5 +65,28 @@ The primary goal of the project is sentiment analysis to analyze raw tweets to e
 # MODELLING, CHATBOT DEVELOPMENT AND DEPLOYMENT.
 
 In the context of engagement prediction, the approach involves several key steps: data splitting for training, testing, and validation, followed by the training and evaluation of various regression models. These models are assessed using metrics like MAE, RMSE, R-squared, and cross-validation scores, with an emphasis on achieving high accuracy in sentiment analysis. Hyperparameter tuning and ensemble modeling are used to enhance model performance, and the best-performing models are selected. In parallel, a chatbot is developed with sentiment-based routing, using predefined or dynamic response templates based on sentiment classification. Additionally, natural language understanding (NLU) is implemented to extract context from user tweets for personalized responses. Testing and training ensure appropriate responses to various sentiments, and the chatbot is integrated into the user interface and deployed at scale, using Pickle for model deployment. The project's scalability allows multiple airlines to customize sentiment analysis and engagement prediction for their specific needs, fostering industry-wide improvements in customer engagement and satisfaction.
+
+# CONCLUSION.
+
+**Sentiment Distribution:** The analysis revealed that negative sentiments are most prevalent among passengers, accounting for approximately ***62.69%** of the sentiments in the dataset. This highlights the importance of addressing customer concerns and improving overall satisfaction.
+
+**Airlines' Sentiment Distribution:** Different airlines exhibit varying sentiment distributions, with some struggling with predominantly negative sentiments, while others maintain a more balanced distribution of positive, negative, and neutral sentiments. Understanding these variations is crucial for each airline's strategy.
+
+**Common Negative Reasons:** "Customer Service Issue" is the most frequently cited reason for negative sentiments across airlines, followed by "Late Flight" and "Cancelled Flight." Addressing these common issues can significantly improve passenger satisfaction.
+
+**Model Performance:** The logistic regression and SVM models exhibit strong performance in classifying sentiment, making them suitable choices for implementing a sentiment analysis system for customer interactions.
+
+# RECOMMENDATIONS.
+
+**Improve Customer Service:** Given that "Customer Service Issue" is a predominant reason for negative sentiments across airlines, it's essential for airlines to invest in enhancing their customer service. This includes better training for staff, faster response times, and improved communication with passengers.
+
+**Address Flight Punctuality:** Late flights are a major concern for passengers, and airlines should work on minimizing delays and providing accurate information to travelers. Implementing efficient flight scheduling and contingency plans can help mitigate this issue.
+
+**Invest in Luggage Handling:** Passengers' sentiments are negatively affected by issues related to lost and damaged luggage. Airlines should focus on improving baggage handling processes to reduce such incidents and ensure a smoother travel experience.
+
+**Enhance Online Booking Systems:** Flight booking problems are a common complaint among passengers. Airlines should update and streamline their online booking systems to make it easier and more user-friendly.
+
+**Monitor Social Media:** Airlines should actively monitor social media platforms for customer feedback and respond promptly to address concerns or complaints. This can help improve customer satisfaction and brand reputation.
+
 
 
