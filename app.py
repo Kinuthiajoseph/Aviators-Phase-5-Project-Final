@@ -88,7 +88,7 @@ def remove_contractions(text):
 def clean_tweet(tweet):
     """Removes name tags, punctuations, links, encoded characters, and underscores."""
         
-     # Lowercase the tweet text
+    # Lowercase the tweet text
     tweet = tweet.lower()
     
     # Defining a list of regex patterns and corresponding replacements
@@ -120,20 +120,20 @@ def clean_tweet(tweet):
 def remove_emojis(text):
     # Define a regular expression pattern for emojis
     emoji_pattern = re.compile("["
-                               u"\U0001F600-\U0001F64F"  # Emoticons
-                               u"\U0001F300-\U0001F5FF"  # Symbols & pictographs
-                               u"\U0001F680-\U0001F6FF"  # Transport & map symbols
-                               u"\U0001F700-\U0001F77F"  # Alchemical symbols
-                               u"\U0001F780-\U0001F7FF"  # Geometric shapes
-                               u"\U0001F800-\U0001F8FF"  # Supplemental Arrows-A
-                               u"\U0001F900-\U0001F9FF"  # Supplemental Arrows-B
-                               u"\U0001FA00-\U0001FA6F"  # Supplemental Symbols and Pictographs
-                               u"\U0001FA70-\U0001FAFF"  # Emoji modifiers
-                               u"\U0001F004-\U0001F0CF"  # Extended emoticons
-                               u"\U0001F170-\U0001F251"  # Enclosed characters
-                               u"\U00002702-\U000027B0"  # Dingbats
-                               u"\U000024C2-\U0001F251" 
-                               "]+", flags=re.UNICODE)
+                            u"\U0001F600-\U0001F64F"  # Emoticons
+                            u"\U0001F300-\U0001F5FF"  # Symbols & pictographs
+                            u"\U0001F680-\U0001F6FF"  # Transport & map symbols
+                            u"\U0001F700-\U0001F77F"  # Alchemical symbols
+                            u"\U0001F780-\U0001F7FF"  # Geometric shapes
+                            u"\U0001F800-\U0001F8FF"  # Supplemental Arrows-A
+                            u"\U0001F900-\U0001F9FF"  # Supplemental Arrows-B
+                            u"\U0001FA00-\U0001FA6F"  # Supplemental Symbols and Pictographs
+                            u"\U0001FA70-\U0001FAFF"  # Emoji modifiers
+                            u"\U0001F004-\U0001F0CF"  # Extended emoticons
+                            u"\U0001F170-\U0001F251"  # Enclosed characters
+                            u"\U00002702-\U000027B0"  # Dingbats
+                            u"\U000024C2-\U0001F251" 
+                            "]+", flags=re.UNICODE)
     
     # Using the sub() method to remove emojis from the text
     text_without_emojis = emoji_pattern.sub(r'', text)
@@ -235,14 +235,13 @@ def predict_sentiment(user_input):
 
     return response
 
-  
     
     # Defining a Streamlit app
 def main():
 # Setting page title and background
     st.set_page_config(page_title="Aviators X Sentiment Analysis Project", 
-                       page_icon="✈️", 
-                       layout="wide")
+                    page_icon="✈️", 
+                    layout="wide")
 
     
     
@@ -250,9 +249,9 @@ def main():
     st.title("Sentiment Analysis with Aviators X")
     airline_image = "airline image.jpeg"
     st.image(airline_image, 
-             use_column_width=True, 
-             caption='Where Emotions Take Flight 🛫',
-             output_format="JPEG") # Displaying the image
+            use_column_width=True, 
+            caption='Where Emotions Take Flight 🛫',
+            output_format="JPEG") # Displaying the image
     
     st.markdown("🚀 **Welcome to the Aviators X Sentiment Analysis Project!** 🚀")
 
@@ -277,50 +276,8 @@ def main():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     st.subheader(' ------------------------Created By :  Aviators Flatiron / Moringa School ---------------------- :sunglasses:')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-       
 if __name__ == '__main__':
     main()
